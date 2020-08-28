@@ -10,4 +10,16 @@ public class Book {
     private String nameOfBook;
     private String authorOfBook;
     private String ISBNNumber;
+
+    public String getNameOfBook() {
+        return nameOfBook;
+    }
+
+    public String getAuthorOfBook() {
+        return authorOfBook;
+    }
+
+    public String getISBNNumber() {
+        return ISBNNumber;
+    }
 }
