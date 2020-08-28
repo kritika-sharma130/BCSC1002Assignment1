@@ -91,4 +91,18 @@ public class Student {
         result = 31 * result + Arrays.hashCode(getNamesOfBooksIssued());
         return result;
     }
+
+    public void issueABook(String bookName) {
+        System.out.println("Thank u for issuing the book" + bookName + ".");
+    }
+
+    public void returnABook(String bookName) {
+        System.out.println("Thank u for returning the book" + bookName + ".");
+    }
+
+    public void showAllTheIssuedBooks() {
+        for (Book book : this.namesOfBooksIssued) {
+            System.out.println(book);
+        }
+    }
 }

@@ -6,6 +6,9 @@
  * */
 package execution;
 
+import definitions.Book;
+import definitions.Student;
+
 import java.util.Scanner;
 
 public class FrontDesk {
@@ -16,7 +19,15 @@ public class FrontDesk {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        long rollUniversityRollNumber;
+        String nameOfStudent;
+        int numberOfBooksIssuedByStudent;
+        Book[] namesOfBooksIssued;
+        String nameOfBookWantToIssue;
+        String nameOfBookWantToReturn;
+        Student student = new Student();
         int studentInput;
+
         do {
             System.out.println("-=-=--=-=-\"Welcome To The Front Desk\"-=-=--=-=-");
             System.out.println("How may I help you today?");
@@ -28,10 +39,20 @@ public class FrontDesk {
             studentInput = scanner.nextInt();
             switch (studentInput) {
                 case ISSUE_A_BOOK:
+                    System.out.println("Please enter the name of the book you want to issue.");
+                    scanner.nextLine();
+                    nameOfBookWantToIssue = scanner.nextLine();
+                    student.issueABook(nameOfBookWantToIssue);
                     break;
                 case RETURN_A_PREVIOUSLY_ISSUED_BOOK:
+                    System.out.println("Please enter the name of the book you want to return");
+                    scanner.nextLine();
+                    nameOfBookWantToReturn = scanner.nextLine();
+                    student.returnABook(nameOfBookWantToReturn);
                     break;
                 case SHOW_ALL_THE_ISSUED_BOOKS:
+                    System.out.println("The names of all the books issued: ");
+                    student.showAllTheIssuedBooks();
                     break;
                 default:
                     break;
