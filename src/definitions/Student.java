@@ -17,9 +17,9 @@ public class Student {
 
     public Student() {
         this.nameOfStudent = "Kritika Sharma";
-        this.universityRollNumberOfStudent = 191500411;
-        this.numberOfBooksIssuedByStudent = 2;
-        this.namesOfBooksIssued = new Book[2];
+        this.universityRollNumberOfStudent = 191500411L;
+        this.numberOfBooksIssuedByStudent = 1;
+        this.namesOfBooksIssued = new Book[1];
         for (int i = 0; i < namesOfBooksIssued.length; i++) {
             namesOfBooksIssued[i] = new Book();
         }
@@ -92,16 +92,29 @@ public class Student {
         return result;
     }
 
+    /**
+     * This method will allow the student to issue a book from the library.
+     *
+     * @param bookName:This is the name of the book that the student has issued.
+     */
     public void issueABook(String bookName) {
         System.out.println("Thank u for issuing the book" + bookName + ".");
     }
 
+    /**
+     * This method will allow the student to return a book from the library.
+     *
+     * @param bookName:This is the name of the book that the student has returned.
+     */
     public void returnABook(String bookName) {
         System.out.println("Thank u for returning the book" + bookName + ".");
     }
 
-    public void showAllTheIssuedBooks() {
-        for (Book book : this.namesOfBooksIssued) {
+    /**
+     * This method will print the list of all the books issued
+     */
+    public void listIssuedBooks() {
+        for (Book book : namesOfBooksIssued) {
             System.out.println(book);
         }
     }

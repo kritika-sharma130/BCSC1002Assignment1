@@ -49,4 +49,31 @@ public class Library {
     public int hashCode() {
         return Arrays.hashCode(getNamesOfBooksAvailable());
     }
+
+    /**
+     * This method will allow the student to issue a book from the library.
+     *
+     * @param bookName:This is the name of the book that the student has issued.
+     */
+    public void issueABook(String bookName) {
+        System.out.println("Thank u for issuing the book" + bookName + ".");
+    }
+
+    /**
+     * This method will allow the student to return a book from the library.
+     *
+     * @param bookName:This is the name of the book that the student has returned.
+     */
+    public void returnABook(String bookName) {
+        System.out.println("Thank u for returning the book" + bookName + ".");
+    }
+
+    /**
+     * This method will print the list of all the books issued
+     */
+    public void listIssuedBooks() {
+        for (Book book : namesOfBooksAvailable) {
+            System.out.println(book);
+        }
+    }
 }
